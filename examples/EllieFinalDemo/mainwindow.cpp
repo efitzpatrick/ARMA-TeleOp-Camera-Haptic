@@ -14,21 +14,6 @@ MainWindow::MainWindow(QWidget *parent) :
     //find out whether Recieving or Streaming
     ui->setupUi(this);
 
-    //if streaming
-    //if recieving
-    /**
-    receive = new QCvReceiver(this);
-    cameraFeed = new QGraphicsScene();
-    ui->videoStream->setScene(cameraFeed);
-    udp = new QUdpSocket(this);
-    if(udp->bind(QHostAddress("192.168.1.15"), 85000))//QHostAddress::AnyIPv4
-    {
-        qDebug()<<"Port successfully opened!";
-    }
-    else qDebug()<<"Port assignment failed!";
-    QApplication::connect(udp,SIGNAL(readyRead()),this,SLOT(updateImage()));
-    **/
-
     disableReceivingOptions();
     pose= new Omega7Udp(0, this);
     force = new Omega7Udp(1, this);
